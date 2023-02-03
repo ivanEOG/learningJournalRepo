@@ -1,0 +1,631 @@
+*{
+    box-sizing: border-box;
+}
+
+html, 
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*Typography*/
+h1,
+h2,
+h3,
+h4,
+ul,
+p{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.title,
+.introduction-message{
+    color: #fff;
+}
+
+/*........Article page typography..........*/
+.article-title
+{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.article-content,
+.article-subtitle,
+.article-introduction
+{
+    font-size: 1rem;
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+.article-subtitle
+{
+    font-weight: 700;
+}
+
+.recent-post
+{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/*.....About me typography......*/
+
+.profile-title
+{
+    font-size: 2.19rem;
+    font-weight: 700;
+}
+
+.profile-introduction
+{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/*Layout*/
+
+
+.nav-container{
+    display: grid;
+    margin: 0 auto;
+    width: 100%;
+    padding: 1.25em 2.5em;
+    grid-template-columns: repeat(2, minmax(0px, 1fr));
+    grid-template-areas: 
+        "headerIcon navBar";
+
+}
+
+.header-hero{
+    background-image: url(https://images.unsplash.com/photo-1516713405307-a970583574e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: grid;
+    width: 100%;
+    padding: 1.5em 0.5em;
+    grid-template-columns: 1em auto auto 1em;
+    grid-gap: 1em 1em;
+    grid-template-areas: 
+        ". top top ."
+        ". title title ."
+        ". message message ."
+        ". . . .";
+}
+
+.card-grid{
+    margin: 2em auto;
+    width: 90%;
+    
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 1em 0;
+}
+
+.card{
+    display: grid;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0.3125em;
+    grid-template-columns: 1em auto auto 1em;
+    grid-gap: 0.5em 1em;
+    grid-template-areas: 
+        ". img img ."
+        ". title title ."
+        ". description description ."
+        "space space space space";
+}
+
+footer{
+    margin: 0;
+    width: 100%;
+    padding: 0.626em;
+    background-color: #202020;
+}
+
+.footer-title{
+    margin-top: 1.25em;
+    color: #ECECEC;
+    font-weight: 700;
+}
+
+.copy-right{
+    margin-bottom: 1.875em;
+    color: #D7D7D7;
+    font-weight: 400;
+}
+
+.footer-title,
+.copy-right{
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+
+/*............hero............*/
+.title{
+    font-size: 2rem;
+    font-weight: 700;
+    grid-area: title;
+}
+
+.introduction-message{
+    font-size: 1rem;
+    line-height: 1.5;
+    grid-area: message;  
+}
+
+.title,
+.introduction-message{
+    justify-self: start;
+    text-shadow: 0 0 5 black;
+}
+
+
+/*.........navigation...........*/
+
+nav
+h1
+a{
+    margin: 0;
+    grid-area: headerIcon;
+    text-decoration: none;
+    color: #090909;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.nav-icon,
+.nav-list{
+    align-self: center;
+}
+
+.nav-icon{
+    justify-self: start;
+}
+
+nav
+ul
+{
+    grid-area: navBar;
+    list-style: none;
+    justify-self: end;
+}
+
+nav
+ul
+li
+a{
+    text-decoration: none;
+    font-size: 0.8125rem;
+    color: #090909;
+}
+
+
+
+
+
+/*............card............*/
+
+.card-img{
+    margin: 0;
+    width: 100%;
+    grid-area: img;
+    align-self: center;
+    justify-self: center;
+    border-radius: 0.25em;
+}
+
+.card-title{
+    margin-top: 0.5em;
+    grid-area: title;
+    align-self: baseline;
+    font-size: 1.50rem;
+    font-weight: 700;
+}
+
+.card-title a{
+    text-decoration: none;
+    color: black;
+
+    cursor: pointer;
+}
+
+.card-description{
+    grid-area: description;
+    font-size: 1rem;
+}
+
+
+/*....Article page Layout......*/
+
+.article-container
+{
+    width: 95%;
+    display: grid;
+    margin: 0 auto 2.625em auto;
+    padding: 0.5em; 
+
+    grid-template-columns: 1em 2fr 1em;
+    grid-template-rows: 1em;
+    grid-gap: 1em 0.5em;
+    grid-auto-rows: auto;
+    grid-template-areas: 
+        ". . ."
+        ". title  ."
+        ". intro  ."
+        ". img  ."
+        ". conten .";
+}
+
+.article-title
+{
+    grid-area: title;
+}
+
+.article-introduction
+{
+    grid-area: intro;
+    margin-bottom: 2em;
+}
+
+.article-img
+{
+    width: 100%;
+    grid-area: img;
+
+}
+
+.article-content
+{
+    grid-area: conten;
+}
+
+.article-subtitle{
+    line-height: 2.5;
+}
+
+/*......About me layout...............*/
+
+.profile-container{
+    display: grid;
+    padding: 0.3em;
+    grid-template-columns: 1em auto auto 1em;
+    grid-template-rows: 1em 12em;
+    grid-auto-rows: auto;
+    grid-row-gap: 1em;
+    grid-template-areas: 
+    ". . . ."
+    ". img . ."
+    ". title title ."
+    ". intro intro .";
+}
+
+.profile-picture{
+    width: 11.25em;
+    grid-area: img;
+    border-radius: 50%;
+}
+
+.profile-title{
+    grid-area: title;
+}
+
+.profile-introduction{
+    grid-area: intro;
+}
+
+.about-me-container{
+    display: grid;
+    padding: 0.3em;
+    grid-template-columns: 1em auto auto 1em;
+    grid-auto-rows: auto;
+    grid-template-areas: 
+        ". . . ."
+        ". txt txt .";
+}
+
+.about-me{
+    grid-area: txt;
+}
+
+/*............mediaquerys............*/
+
+/*Sansung s8 size*/
+@media (max-width: 360px){
+
+    /*nav*/
+    nav
+    h1{
+        font-size: 0.8rem;
+    }
+
+    nav
+    ul
+    li
+    a{
+        font-size: 0.79rem;
+    }
+}
+
+@media (min-width: 381px){
+
+    .header-hero{
+        padding: 2.5em 0.5em;
+    }
+}
+
+@media (min-width: 539px){
+
+    .header-hero{
+        padding: 3em 0.5em;
+        grid-row-gap: 0.6em;
+        grid-template-areas: 
+        ". top top ."
+        ". title title ."
+        ". message message ."
+        ;
+    }
+
+    .title{
+        font-size: 8vh;
+        margin-bottom: 0;
+    }
+    
+    .introduction-message{
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+    
+}
+
+@media (min-width: 768px){
+    /*............navbar............*/
+    nav
+    h1{
+        font-size: 1.1rem;
+    }
+
+    nav
+    ul
+    li
+    a{
+        font-size: 1.1rem;
+    }
+
+    /*............Hero............*/
+    .header-hero{
+        height: 100%;
+        padding: 3em 0.5em;
+        grid-template-columns: 1em auto auto 1em;
+        grid-template-rows: 12.5em auto 6.125em;
+        grid-row-gap: 0.6em;
+        grid-template-areas: 
+        ". top top ."
+        ". title title ."
+        ". message . ."
+        ;
+    }
+
+    .title{
+        font-size: 2.1875rem;   
+        align-self: end;
+    }
+    
+    .introduction-message{
+        font-size: 1.3rem;
+
+    }
+
+    /*......card section.....*/
+
+    .card-grid{
+        width: 80%;
+    }
+
+    .card{
+        grid-template-areas: 
+            ". img img ."
+            ". title title ."
+            ". description . ."
+            "space space space space";
+    }
+
+    .card-title{
+        font-size: 1.75rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .card-description{
+        font-size: 1.25rem;
+    }
+
+    /*.....footer.....*/
+
+    .footer-title,
+    .copy-right{
+        font-size: 1.1rem;
+    }
+    
+}
+
+
+@media (min-width: 799px){
+
+    .title{
+        font-size: 5vw;
+    }
+    
+    .introduction-message{
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+
+@media (min-width: 920px){
+    /*............navbar............*/
+    nav
+    h1
+    a{
+        font-size: 1.1rem;
+    }
+
+    nav
+    ul
+    li
+    a{
+        font-size: 1.1rem;
+    }
+
+    /*............Hero............*/
+    .header-hero{
+        height: 100%;
+        padding: 3em 0.5em;
+        grid-template-columns: 1em .5fr auto 1em;
+        grid-template-rows: 12em auto auto;
+        grid-row-gap: 0.6em;
+        grid-template-areas: 
+        ". top top ."
+        ". title title ."
+        ". message . ."
+        ;
+    }
+
+
+    
+
+    /*......card section.....*/
+
+    .card-grid{
+        width: 90%;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-column-gap: 1.625em;
+    }
+
+    .card-img{
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .card{
+        grid-template-areas: 
+            ". img img ."
+            ". title title ."
+            ". description description ."
+            "space space space space";
+    }
+
+    .card-title{
+        font-size: 1.70rem;
+        letter-spacing: 1.4px;
+    }
+    
+    .card-description{
+        font-size: 1rem;
+    }
+
+    /*.....footer.....*/
+
+    .footer-title,
+    .copy-right{
+        font-size: 1.1rem;
+    }
+
+    /*.........Article page..........*/
+    
+    /*Article grid*/
+
+    .article-section{
+        margin-top: 7em;
+    }
+
+    .article-container
+    {
+        width: 80%;
+        display: grid;
+        margin: 0 auto 2.625em auto;
+        padding: 0.5em; 
+
+        grid-template-columns: 1em 4em 2fr 4em 1em;
+        grid-template-rows: 1em;
+        grid-gap: 1em 0.5em;
+        grid-auto-rows: auto;
+        grid-template-areas: 
+            ". . . . ."
+            ". . title  . ."
+            ". . intro  . ."
+            ". img img img  ."
+            ". . conten . .";
+    }
+
+    .article-img
+    {
+       border-radius: 4px;
+       
+    }
+
+    /*.......About me........*/
+
+    .profile-container{
+        display: grid;
+        width: 90%;
+        margin: 5.6253em auto 0 auto;
+        padding: 0.3em;
+        grid-template-columns: 1em auto 2fr 2fr 1em;
+        grid-template-rows: 1em;
+        grid-auto-rows: auto;
+        grid-template-areas: 
+            ". . . . ."
+            ". img title title ."
+            ". img intro intro .";
+       
+    }
+
+    
+    .profile-title{
+        align-self: end;
+        font-size: 2.25rem;
+        padding-left: 1em;
+    }
+    
+    .profile-introduction
+    {
+        padding-left: 2em;
+    }
+    
+    .about-me-container{
+        width: 80%;
+        margin: 4.1em auto
+    }
+    
+}
+
+
+@media (min-width: 1024px){
+
+       /*............Hero............*/
+       .header-hero{
+        height: 100%;
+        grid-template-rows: auto auto 6.125em;
+        grid-row-gap: 0.5;
+       }
+
+    .title{
+        font-size: 4vw;
+    }
+    
+    .introduction-message{
+        font-size: 1.75rem;
+    }
+}
